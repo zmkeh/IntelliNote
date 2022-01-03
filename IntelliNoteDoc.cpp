@@ -43,7 +43,6 @@ BEGIN_MESSAGE_MAP(CIntelliNoteDoc, CRichEditDoc)
 	ON_UPDATE_COMMAND_UI_RANGE(ID_OLE_VERB_FIRST, ID_OLE_VERB_LAST, &CRichEditDoc::OnUpdateObjectVerbMenu)
 END_MESSAGE_MAP()
 
-
 // CIntelliNoteDoc construction/destruction
 
 CIntelliNoteDoc::CIntelliNoteDoc() noexcept

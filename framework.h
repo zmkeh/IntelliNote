@@ -32,8 +32,6 @@ IntelliNote.  If not, see <http://www.opensource.org/licenses/gpl-3.0.html>*/
 
 #include <afxdisp.h>        // MFC Automation classes
 
-
-
 #ifndef _AFX_NO_OLE_SUPPORT
 #include <afxdtctl.h>           // MFC support for Internet Explorer 4 Common Controls
 #endif
@@ -43,15 +41,9 @@ IntelliNote.  If not, see <http://www.opensource.org/licenses/gpl-3.0.html>*/
 
 #include <afxcontrolbars.h>     // MFC support for ribbons and control bars
 
-
 #include <afxsock.h>            // MFC socket extensions
 
 #include <afxrich.h>            // MFC rich edit classes
-
-
-
-
-
 
 #ifdef _UNICODE
 #if defined _M_IX86
@@ -62,5 +54,3 @@ IntelliNote.  If not, see <http://www.opensource.org/licenses/gpl-3.0.html>*/
 #pragma comment(linker,"/manifestdependency:\"type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' processorArchitecture='*' publicKeyToken='6595b64144ccf1df' language='*'\"")
 #endif
 #endif
-
-

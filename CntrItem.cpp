@@ -26,7 +26,6 @@ IntelliNote.  If not, see <http://www.opensource.org/licenses/gpl-3.0.html>*/
 #define new DEBUG_NEW
 #endif
 
-
 // CIntelliNoteCntrItem implementation
 
 IMPLEMENT_SERIAL(CIntelliNoteCntrItem, CRichEditCntrItem, 0)
@@ -41,7 +40,6 @@ CIntelliNoteCntrItem::~CIntelliNoteCntrItem()
 {
 	// TODO: add cleanup code here
 }
-
 
 // CIntelliNoteCntrItem diagnostics
 

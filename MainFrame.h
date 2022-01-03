@@ -49,16 +49,18 @@ protected:  // control bar embedded members
 
 // Generated message map functions
 protected:
+	BOOL CreateCaptionBar();
 	afx_msg int OnCreate(LPCREATESTRUCT lpCreateStruct);
 	afx_msg void OnWindowManager();
 	afx_msg void OnViewCaptionBar();
 	afx_msg void OnUpdateViewCaptionBar(CCmdUI* pCmdUI);
 	afx_msg void OnOptions();
-	DECLARE_MESSAGE_MAP()
-
-	BOOL CreateCaptionBar();
-public:
 	afx_msg void OnDateTime();
+	afx_msg void OnUndo();
+	afx_msg void OnUpdateUndo(CCmdUI *pCmdUI);
+	afx_msg void OnRedo();
+	afx_msg void OnUpdateRedo(CCmdUI *pCmdUI);
+	DECLARE_MESSAGE_MAP()
 };
 
 

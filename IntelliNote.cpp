@@ -32,7 +32,6 @@ IntelliNote.  If not, see <http://www.opensource.org/licenses/gpl-3.0.html>*/
 #define new DEBUG_NEW
 #endif
 
-
 // CIntelliNoteApp
 
 BEGIN_MESSAGE_MAP(CIntelliNoteApp, CWinAppEx)
@@ -43,7 +42,6 @@ BEGIN_MESSAGE_MAP(CIntelliNoteApp, CWinAppEx)
 	// Standard print setup command
 	ON_COMMAND(ID_FILE_PRINT_SETUP, &CWinAppEx::OnFilePrintSetup)
 END_MESSAGE_MAP()
-
 
 // CIntelliNoteApp construction
 
@@ -161,7 +159,6 @@ BOOL CIntelliNoteApp::InitInstance()
 	EnableShellOpen();
 	RegisterShellFileTypes(TRUE);
 
-
 	// Dispatch commands specified on the command line.  Will return FALSE if
 	// app was launched with /RegServer, /Register, /Unregserver or /Unregister.
 	if (!ProcessShellCommand(cmdInfo))
@@ -182,7 +179,6 @@ int CIntelliNoteApp::ExitInstance()
 }
 
 // CIntelliNoteApp message handlers
-
 
 // CAboutDlg dialog used for App About
 

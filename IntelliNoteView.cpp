@@ -75,9 +75,7 @@ void CIntelliNoteView::OnInitialUpdate()
 	SetMargins(CRect(720, 720, 720, 720));
 }
 
-
 // CIntelliNoteView printing
-
 
 void CIntelliNoteView::OnFilePrintPreview()
 {
@@ -92,7 +90,6 @@ BOOL CIntelliNoteView::OnPreparePrinting(CPrintInfo* pInfo)
 	return DoPreparePrinting(pInfo);
 }
 
-
 void CIntelliNoteView::OnDestroy()
 {
 	// Deactivate the item on destruction; this is important
@@ -106,7 +103,6 @@ void CIntelliNoteView::OnDestroy()
    CRichEditView::OnDestroy();
 }
 
-
 void CIntelliNoteView::OnRButtonUp(UINT /* nFlags */, CPoint point)
 {
 	ClientToScreen(&point);
@@ -119,7 +115,6 @@ void CIntelliNoteView::OnContextMenu(CWnd* /* pWnd */, CPoint point)
 	theApp.GetContextMenuManager()->ShowPopupMenu(IDR_POPUP_EDIT, point.x, point.y, this, TRUE);
 #endif
 }
-
 
 // CIntelliNoteView diagnostics
 
@@ -140,6 +135,5 @@ CIntelliNoteDoc* CIntelliNoteView::GetDocument() const // non-debug version is i
 	return (CIntelliNoteDoc*)m_pDocument;
 }
 #endif //_DEBUG
-
 
 // CIntelliNoteView message handlers

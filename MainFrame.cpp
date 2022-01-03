@@ -38,6 +38,10 @@ BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWndEx)
 	ON_UPDATE_COMMAND_UI(ID_VIEW_CAPTION_BAR, &CMainFrame::OnUpdateViewCaptionBar)
 	ON_COMMAND(ID_TOOLS_OPTIONS, &CMainFrame::OnOptions)
 	ON_COMMAND(ID_DATE_TIME, &CMainFrame::OnDateTime)
+	ON_COMMAND(ID_UNDO, &CMainFrame::OnUndo)
+	ON_UPDATE_COMMAND_UI(ID_UNDO, &CMainFrame::OnUpdateUndo)
+	ON_COMMAND(ID_REDO, &CMainFrame::OnRedo)
+	ON_UPDATE_COMMAND_UI(ID_REDO, &CMainFrame::OnUpdateRedo)
 END_MESSAGE_MAP()
 
 // CMainFrame construction/destruction
@@ -285,4 +289,72 @@ void CMainFrame::OnDateTime()
 	ASSERT(err == 0);*/
 	CRichEditCtrl& pCtrl = pView->GetRichEditCtrl();
 	pCtrl.ReplaceSel(CString(lpszBuffer));
+}
+
+void CMainFrame::OnUndo()
+{
+	CMDIFrameWnd *pFrame = (CMDIFrameWnd*)AfxGetApp()->GetMainWnd();
+
+	// Get the active MDI child window.
+	CMDIChildWnd *pChild = (CMDIChildWnd*)pFrame->GetActiveFrame();
+
+	// Get the active view attached to the active MDI child window.
+	CIntelliNoteView *pView = (CIntelliNoteView*)pChild->GetActiveView();
+
+	// Get the active document attached to the active MDI child window.
+	// CIntelliNoteDoc *pDoc = (CIntelliNoteDoc*)pView->GetDocument();
+
+	CRichEditCtrl& pCtrl = pView->GetRichEditCtrl();
+	pCtrl.Undo();
+}
+
+void CMainFrame::OnUpdateUndo(CCmdUI *pCmdUI)
+{
+	CMDIFrameWnd *pFrame = (CMDIFrameWnd*)AfxGetApp()->GetMainWnd();
+
+	// Get the active MDI child window.
+	CMDIChildWnd *pChild = (CMDIChildWnd*)pFrame->GetActiveFrame();
+
+	// Get the active view attached to the active MDI child window.
+	CIntelliNoteView *pView = (CIntelliNoteView*)pChild->GetActiveView();
+
+	// Get the active document attached to the active MDI child window.
+	// CIntelliNoteDoc *pDoc = (CIntelliNoteDoc*)pView->GetDocument();
+
+	CRichEditCtrl& pCtrl = pView->GetRichEditCtrl();
+	pCmdUI->Enable(pCtrl.CanUndo());
+}
+
+void CMainFrame::OnRedo()
+{
+	CMDIFrameWnd *pFrame = (CMDIFrameWnd*)AfxGetApp()->GetMainWnd();
+
+	// Get the active MDI child window.
+	CMDIChildWnd *pChild = (CMDIChildWnd*)pFrame->GetActiveFrame();
+
+	// Get the active view attached to the active MDI child window.
+	CIntelliNoteView *pView = (CIntelliNoteView*)pChild->GetActiveView();
+
+	// Get the active document attached to the active MDI child window.
+	// CIntelliNoteDoc *pDoc = (CIntelliNoteDoc*)pView->GetDocument();
+
+	CRichEditCtrl& pCtrl = pView->GetRichEditCtrl();
+	pCtrl.Redo();
+}
+
+void CMainFrame::OnUpdateRedo(CCmdUI *pCmdUI)
+{
+	CMDIFrameWnd *pFrame = (CMDIFrameWnd*)AfxGetApp()->GetMainWnd();
+
+	// Get the active MDI child window.
+	CMDIChildWnd *pChild = (CMDIChildWnd*)pFrame->GetActiveFrame();
+
+	// Get the active view attached to the active MDI child window.
+	CIntelliNoteView *pView = (CIntelliNoteView*)pChild->GetActiveView();
+
+	// Get the active document attached to the active MDI child window.
+	// CIntelliNoteDoc *pDoc = (CIntelliNoteDoc*)pView->GetDocument();
+
+	CRichEditCtrl& pCtrl = pView->GetRichEditCtrl();
+	pCmdUI->Enable(pCtrl.CanRedo());
 }
