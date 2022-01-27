@@ -20,7 +20,7 @@ IntelliNote.  If not, see <http://www.opensource.org/licenses/gpl-3.0.html>*/
 #endif
 
 #include "resource.h"       // main symbols
-
+#include "sinstance.h"
 
 // CIntelliNoteApp:
 // See IntelliNote.cpp for the implementation of this class
@@ -31,6 +31,8 @@ class CIntelliNoteApp : public CWinAppEx
 public:
 	CIntelliNoteApp() noexcept;
 
+public:
+	CInstanceChecker m_pInstanceChecker;
 
 // Overrides
 public:
