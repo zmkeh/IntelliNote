@@ -97,6 +97,13 @@ BOOL CIntelliNoteApp::InitInstance()
 		return FALSE;
 	}
 
+	AfxEnableControlContainer();
+
+	EnableTaskbarInteraction();
+
+	// AfxInitRichEdit2() is required to use RichEdit control
+	AfxInitRichEdit2();
+
 	//Check for the previous instance as soon as possible
 	if (m_pInstanceChecker.PreviousInstanceRunning())
 	{
@@ -107,13 +114,6 @@ BOOL CIntelliNoteApp::InitInstance()
 		m_pInstanceChecker.ActivatePreviousInstance(cmdInfo.m_strFileName);
 		return FALSE;
 	}
-
-	AfxEnableControlContainer();
-
-	EnableTaskbarInteraction();
-
-	// AfxInitRichEdit2() is required to use RichEdit control
-	// AfxInitRichEdit2();
 
 	// Standard initialization
 	// If you are not using these features and wish to reduce the size
