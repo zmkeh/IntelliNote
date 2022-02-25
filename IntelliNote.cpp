@@ -272,14 +272,14 @@ BOOL CAboutDlg::OnInitDialog()
 	// logfont.lfQuality = ANTIALIASED_QUALITY;
 	logfont.lfOutPrecision = OUT_TT_PRECIS;
 	logfont.lfWeight = FW_NORMAL;
-	logfont.lfHeight = -MulDiv(6, GetDeviceCaps(::GetDC(NULL), LOGPIXELSY), 72);;
+	logfont.lfHeight = -MulDiv(6, GetDeviceCaps(::GetDC(NULL), LOGPIXELSY), 72);
 	_tcscpy_s(logfont.lfFaceName, LF_FACESIZE, _T("Tahoma"));
 	VERIFY(m_fontCourier.CreateFontIndirect(&logfont));
 
 	m_ctrlWarning.SetFont(&m_fontCourier);
 	m_ctrlWarning.SetWindowText(_T("THE SOFTWARE IS PROVIDED \"AS-IS\" AND WITHOUT WARRANTY OF ANY KIND, EXPRESS, IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL STEFAN-MIHAI MOGA BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND, OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER OR NOT ADVISED OF THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE."));
 
-	m_ctrlWebsite.SetHyperlink(_T("https://www.intellinote.ro/"));
+	m_ctrlWebsite.SetHyperlink(_T("https://www.emvs.site/"));
 	m_ctrlEmail.SetHyperlink(_T("mailto:contact@emvs.site"));
 
 	return TRUE;  // return TRUE unless you set the focus to a control
@@ -320,6 +320,3 @@ void CIntelliNoteApp::SaveCustomState()
 }
 
 // CIntelliNoteApp message handlers
-
-
-
